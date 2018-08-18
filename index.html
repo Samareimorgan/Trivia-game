@@ -9,6 +9,8 @@
   <title>Rotary Trivia</title>
   <!--Link Reset Style Sheet-->
   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <!--Link to Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Simonetta|Spectral+SC" rel="stylesheet">
   <!--Link Bootstrap CDN-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
     crossorigin="anonymous">
@@ -18,29 +20,28 @@
 </head>
 
 <body>
-  
+
   <!--Add Bootstrap Container-->
-  <div id="bgimage" class="container-fluid">
+  <div class="container-fluid">
     <!--Add Bootstrap Grid-->
     <div class="row">
       <!--Column 1 is the height of the viewport-->
-      <div class="col-3">
-        <div class="card">
+      <div class="col-3 sidecolumn">
+        <div>
           <img class="responsive-image" id="rotaryLogo" src="assets/images/LockupRI-BTI.png">
         </div>
-        <div class="card">
-          <p class="card-title">CATEGORY:</p>
+        <div>
           <p>Rotary International</p>
         </div>
-        <div class="card">
+        <div>
           <p>check or x goes here</p>
         </div>
       </div>
       <!--Column 2 has 3 rows in it-->
       <div class="col-6">
         <!--Column 2 Row 1-Game Name-->
-        <div class="row">
-            <p>Triva Challenge!</p>
+        <div id=gameName class="row">
+            <p>Rotary Triva Challenge!</p>
         </div>
         <!--Column 2 Row 2-Question-->
         <div class="row">
@@ -58,14 +59,14 @@
 
       </div>
       <!--Column 3 is the height of the viewport-->
-      <div class="col-3">
-        <div class="card">
+      <div class="col-3 sidecolumn">
+        <div>
           <P>Time Left:</P>
         </div>
-        <div class="card">
+        <div>
           <p>Rotary Club of Centennial</p>
         </div>
-        <div class="card">
+        <div>
           <P>Your Score: </P>
         </div>
       </div>

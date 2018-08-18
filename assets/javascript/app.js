@@ -59,6 +59,8 @@ rotaryLogo();
         wins++;
     });
 
+ To show .d-block an element -  to hide an element: .d-none through bootstrap
+
 
 
 

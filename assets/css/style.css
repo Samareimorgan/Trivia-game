@@ -1,9 +1,7 @@
 body {
-    color: teal;
-    font-size: 25px;
-}
-
-#bgimage {
+    color: lightskyblue;
+    font-family: 'Simonetta', cursive;
+    font-size: 35px;
     background-image: url("../images/dark-grey-terrazzo.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -12,5 +10,14 @@ body {
 
 #rotaryLogo {
     width: 100%;
-    height: 100%;
 }
+.sidecolumn {
+    background-color: black;
+}
+#gameName {
+    font-family: 'Spectral SC', serif;
+    font-size: 75px;
+    text-align: center;
+    color: hsla(345, 92%, 56%, 1);
+}
+
