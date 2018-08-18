@@ -1,6 +1,16 @@
 body {
+    color: teal;
+    font-size: 25px;
+}
+
+#bgimage {
     background-image: url("../images/dark-grey-terrazzo.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+#rotaryLogo {
+    width: 100%;
+    height: 100%;
 }
