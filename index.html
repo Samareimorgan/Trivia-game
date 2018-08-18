@@ -18,71 +18,70 @@
 </head>
 
 <body>
-  <!--Add Header-->
-  <header></header>
-    <!--Add Bootstrap Container-->
-    <div class="container-fluid">
-      <!--Add Bootstrap Grid-->
-      <div class="row">
-        <!--Grid Box 1-->
-        <div class="col-3">
-          <div class="card">
-            <img id=rotaryLogo src='assets/images/LockupRI-BTI.png'>
-          </div class>
-        </div class>
-        <!--Grid Box 2-->
-        <div class="col-6">
-          <p>Triva Challenge!</p>
-        </div class> 
-        <!--Grid Box 3-->
-        <div class="col-3">
-          <div class="card">
-            <P>Time Left:</P>
-          </div class>
-        </div class>
-      </div class>
-      <div class="row">
-        <!--Grid Box 4-->
-        <div class="col-3">
-          <!--Category 1 Box-->
-          <p>Rotary International</p>
-        </div class>
-        <!--Grid Box 5--> 
-        <div class="col-6"><span id="question"><p>Question Goes Here</p></span></div class> 
-        <!--Grid Box 6-->
-        <div class="col-3">
-          <p>Rotary Club of Centennial</p>
-        </div class>
-      </div class>
-      <div class="row">
-        <!--Grid Box 7-->
-        <div class="col-3">
-          <p>check or x goes here</p>
-        </div class> 
-        <!--Grid Box 8-->
-        <div class="col-6">
-            <div class class="btn-group btn-group-lg" role="group" aria-label="...">...</div class>
-            <div class class="btn-group" role="group" aria-label="...">This is a button</div class>
-            <div class class="btn-group btn-group-sm" role="group" aria-label="...">This is a small button</div class>
-          <p>buttons for 4 answers go here</p>
-        </div class>
-        <!--Grid Box 9--> 
-        <div class="col-3">
-          <P>Your Score: </P>
-        </div class>
-      </div class>
-    </div class>
-
-  <!--Add Footer-->
-  <footer></footer>
   
+  <!--Add Bootstrap Container-->
+  <div id="bgimage" class="container-fluid">
+    <!--Add Bootstrap Grid-->
+    <div class="row">
+      <!--Column 1 is the height of the viewport-->
+      <div class="col-3">
+        <div class="card">
+          <img class="responsive-image" id="rotaryLogo" src="assets/images/LockupRI-BTI.png">
+        </div>
+        <div class="card">
+          <p class="card-title">CATEGORY:</p>
+          <p>Rotary International</p>
+        </div>
+        <div class="card">
+          <p>check or x goes here</p>
+        </div>
+      </div>
+      <!--Column 2 has 3 rows in it-->
+      <div class="col-6">
+        <!--Column 2 Row 1-Game Name-->
+        <div class="row">
+            <p>Triva Challenge!</p>
+        </div>
+        <!--Column 2 Row 2-Question-->
+        <div class="row">
+          <span id="question">
+            <p>Question Goes Here</p>
+          </span>
+        </div>
+        <!--Column 2 Row 3 - Answer Buttons-->
+        <div class="row">
+          <button type="button">Answer1</button>
+          <button type="button">Answer2</button>
+          <button type="button">Answer3</button>
+          <button type="button">Answer4</button>
+        </div>
 
-   <!--Link Jquery -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      </div>
+      <!--Column 3 is the height of the viewport-->
+      <div class="col-3">
+        <div class="card">
+          <P>Time Left:</P>
+        </div>
+        <div class="card">
+          <p>Rotary Club of Centennial</p>
+        </div>
+        <div class="card">
+          <P>Your Score: </P>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---    Script Links   -->
+  <!--Link Jquery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
   <!--Link Popper JS-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
   <!--Link Bootstrap JS-->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
   <!--Link Custom JS-->
   <script src="assets/javascript/app.js"></script>
 </body>
