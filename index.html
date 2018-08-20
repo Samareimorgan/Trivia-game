@@ -30,11 +30,15 @@
         <div>
           <img class="responsive-image" id="rotaryLogo" src="assets/images/LockupRI-BTI.png">
         </div>
+        <br>
+        <br>
         <div>
           <p>Rotary International</p>
         </div>
-        <div>
-          <p>check or x goes here</p>
+        <br>
+        <br>
+        <div id=answerComment>
+          <button class="btn btn-lg" id="newGame">Start Game</button>
         </div>
       </div>
       <!--Column 2 has 3 rows in it-->
@@ -45,38 +49,44 @@
         </div>
         <!--Column 2 Row 2-Question-->
         <div class="row">
-          <span id="question">
-            <p>Question Goes Here</p>
-          </span>
+            <h2><span id="question">
+
+          </span></h2>
         </div>
         <!--Column 2 Row 3 - Answer Buttons-->
         <div class="row">
-          <button type="button">Answer1</button>
-          <button type="button">Answer2</button>
-          <button type="button">Answer3</button>
-          <button type="button">Answer4</button>
+        <button class='btn btn-success align-middle' id='submitAnswers'>Submit</button>
         </div>
-
       </div>
       <!--Column 3 is the height of the viewport-->
       <div class="col-3 sidecolumn">
         <div>
-          <P>Time Left:</P>
+          <P>Time Left:<span id="timer"></span></P>
         </div>
+        <br>
+        <br>
         <div>
           <p>Rotary Club of Centennial</p>
         </div>
+        <br>
+        <br>
         <div>
-          <P>Your Score: </P>
+          <span id="yourScore"></span>
         </div>
       </div>
     </div>
   </div>
+  <footer>
+    <h4>“Together, we see a world where people unite and take action to create lasting change — across the globe, in our communities, and in ourselves.”</h4>
+  </footer>
 
   <!---    Script Links   -->
   <!--Link Jquery -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
+  <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>
   <!--Link Popper JS-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
     crossorigin="anonymous"></script>

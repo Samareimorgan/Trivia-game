@@ -1,108 +1,101 @@
-$(document).ready(function(){
-/* Global Variables*/
-var questionTime = 30;
-var intervalTime;
-var winAudio = new audio("<href='...'>");
-var stopAudio = new audio("<href='...'>");
-var score= 0;
+$(document).ready(function () {
+  /* Global Variables*/
 
-
-//Objects//
-var triviaGame = {
-    /*questions: {
-        rotaryQ1: {
-            Q1:"Where are the Rotary International Headquarters located?",
-            answer1: ["El Segundo, CA", "London, England", "Sydney, Australia", "Evanston, IL"],
-            correctAnswer: answers1[3],
-            category: "Rotary International"
-        },
-
-        rotaryQ2: {
-            Q2: "What city is the Rotary International Convention being held at in June 2019?",
-            answers2: ["Beijing","Hamburg","Honolulu", "Atlanta"],
-            correctAnswer: answers2[1],
-            category:  "Rotary International"
-        },
-        */
-
-
-       /* rotaryQ3: {
-            Q3: "Where are the Rotary International Headquarters located?",
-            answer3: "El Segundo, CA", 
-            correctAnswer: 
-            category: "Rotary International"
-
-        rotaryQ4: {
-            Q4: "Where are the Rotary International Headquarters located?",
-            answers4: ["El Segundo, CA", 
-            "London, England",
-            incorrectAnswer3: "Sydney, Australia",
-            correctAnswer: "Evanston, IL",
-            category: "Rotary International" 
-}
-
-rotaryQ5 = {
-    question: "Where are the Rotary International Headquarters located?",
-    incorrectAnswer1: "El Segundo, CA", 
-    incorrectAnswer2: "London, England",
-    incorrectAnswer3: "Sydney, Australia",
-    correctAnswer: "Evanston, IL",
-    category: "Rotary International"
-},
-*/  
-function rotaryLogo() {
-$("#rotaryLogo").append("<img src='/assets/images/LockupRI-BTI.png'>");
-}
-rotaryLogo();
-   /* $("#button").on("click", function() {
-    if(this.correctAnswer); 
-        wins++;
-    });
-
- To show .d-block an element -  to hide an element: .d-none through bootstrap
-
-
-
-
- /* 
-  "What city is the Rotary International Convention being held at in June 2019?",
-  "What 2 topics are listed as areas of focus?",
-  "What"
-
-
-  
-$.each(  input - radio  if thisval ==== .correctAnswer)
-
-
-//On Click Events//
-$("#stop").on("click", stop);
-$("#start").on("click", start);
-
-//functions//
-function run() {
-  clearInterval(intervalTime);
-  intervalTime = setInterval(decrement,1000);
-}
-
-function decrement() {
-  questionTime--;
-  $("#").html("<h2>" + questionTime + "</h2>");
-  
-  if(questionTime === 0);
-    stop();
-    stopAudio.play();
-}
-
-/* Questions and Answers
-Create Main Categories of Questions: Rotary International, Centennial Rotary
-Create matching Arrays of Answers to go with the categorie for example  rICategory rIAnswers  
-Create Randomized Questions Math.floor(Math.Random) and obtain the Index # from that 
-From there, we will need if statments for each Index#  
-  If (rIQuestions[0] === true);
-      function placeAnswers() {
-        
+  var triviaGame = [
+      {
+        question: "Where are the Rotary International Headquarters located?",
+        answers: ["El Segundo, CA", "London, England", "Sydney, Australia", "Evanston, IL"],
+        correctAnswer: "Evanston, IL",
+      },
+      {
+        question: "What city is the Rotary International Convention being held at in June 2019?",
+        answers: ["Beijing", "Hamburg", "Honolulu", "Atlanta"],
+        correctAnswer: "Hamburg",
+      },
+      {
+        question: "What year was the Rotary Club of Centennial established?",
+        answers: ["2001", "2003", "1999", "2005"],
+        correctAnswer: "2001",
+      },
+      {
+        question: "What district is the Rotary Club of Centennial in?",
+        answers: ["5480", "5510", "5450", "5440"],
+        correctAnswer: "5450",
       }
+    ];
+
+  var questionTime = 30;
+  var intervalTime;
+  var score = 0;
+
+  
+  //Functions.....
+  //.... Create a Function for rendering questions and answers
+  function renderQuestions() {
+    $('#question').html("");
+    for (var i=0; i<triviaGame.length; i++) {
+        $('#question').append($("<h3>" + triviaGame[i].question + "</h3>"));
+        for (var j=0; j<triviaGame[i].answers.length; j++) {
+            $('#question').append($("<input type='radio' value='" + triviaGame[i].answers[j] + "' name='question-" + i + "'>" + triviaGame[i].answers[j] + "<br>" ));
+        }
+        $('#question').append('<hr>');
+    }
+  };
+  //..... Create a Function to reset game 
+  function newGame() {
+    run();
+    $("#question").empty();
+    renderQuestions();
+    score = 0;
+  };
+  // Create function to run timer
+  function run() {
+    clearInterval(intervalTime);
+    intervalTime = setInterval(decrement, 1000);
+  };
+  // Create function that decrements the timer
+  function decrement() {
+    questionTime--;
+    $("#timer").html("<h3>" + questionTime + "<h3>");
+    console.log(questionTime)
+      if (questionTime === 0) {
+        stop();
+        console.log("Time Over");
+      }
+  };  
+  // Create function that stops the timer.
+  function stop() {
+    clearInterval(intervalTime);
+    submitAnswers();
+
+  }
+  // Create function to submit game answers and compare
+  function submitAnswers() {
+    for (var i=0; i<triviaGame.length; i++)  {
+        $.each($("input[name='question-" + i + "']:checked"), function() {
+            console.log($(this).attr('value'));
+            var userGuess = $(this).attr('value');
+            if (userGuess === triviaGame[i].correctanswer) {
+                console.log('correct');
+                score++;
+            } 
+        });  
+    }
+    $("#yourScore").text($("<h3>" + score + "</h3>"));
+  } 
+  
+  // Process of Game
 
 
-        “Together, we see a world where people unite and take action to create lasting change — across the globe, in our communities, and in ourselves.” */
-    }}})
+  //Begin Game when "Start is clicked"//
+  $("#newGame").on("click",function() {
+    newGame();
+  });
+
+  $("#submitAnswers").on("click", function() {
+    submitAnswers();
+    stop();
+  });
+
+
+  })
