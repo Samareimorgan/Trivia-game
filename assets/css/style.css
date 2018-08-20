@@ -25,3 +25,10 @@ footer {
     background-color: black;
     padding: 10px;
 }
+#answerComment {
+    color: brown;
+}
+
+#submitAnswers {
+    font-size: 20px;
+}

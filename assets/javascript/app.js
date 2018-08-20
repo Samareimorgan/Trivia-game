@@ -47,9 +47,11 @@ $(document).ready(function () {
     $("#question").empty();
     renderQuestions();
     score = 0;
+    $("#answerComment").html("");
   };
   // Create function to run timer
   function run() {
+    questionTime = 30;
     clearInterval(intervalTime);
     intervalTime = setInterval(decrement, 1000);
   };
@@ -60,7 +62,7 @@ $(document).ready(function () {
     console.log(questionTime)
       if (questionTime === 0) {
         stop();
-        console.log("Time Over");
+        $("#answerComment").html("Time Over");
       }
   };  
   // Create function that stops the timer.
@@ -75,21 +77,24 @@ $(document).ready(function () {
         $.each($("input[name='question-" + i + "']:checked"), function() {
             console.log($(this).attr('value'));
             var userGuess = $(this).attr('value');
-            if (userGuess === triviaGame[i].correctanswer) {
+            if (userGuess === triviaGame[i].correctAnswer) {
                 console.log('correct');
                 score++;
-            } 
+            }
+            
         });  
     }
-    $("#yourScore").text($("<h3>" + score + "</h3>"));
+    $("#yourScore").html("<h3>" + "Your Score: " + score + "</h3>");
   } 
   
   // Process of Game
 
 
   //Begin Game when "Start is clicked"//
+  $("#submitAnswers").hide();
   $("#newGame").on("click",function() {
     newGame();
+    $("#submitAnswers").show();
   });
 
   $("#submitAnswers").on("click", function() {
